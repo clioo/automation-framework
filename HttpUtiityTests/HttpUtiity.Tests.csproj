@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{121EBB5F-B479-4AAA-8263-188EEEDC6663}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HttpUtiityTests</RootNamespace>
+    <AssemblyName>HttpUtiityTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Demo|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Demo\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Sandbox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Sandbox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ChrisCO|AnyCPU'">
+    <OutputPath>bin\ChrisCO\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CredentialManagement, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CredentialManagement.1.0.2\lib\net35\CredentialManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Dfsi.Utility.Requester, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dfsi.Utility.Requester.2019.10.23.1\lib\net462\Dfsi.Utility.Requester.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SlowCheetah.Xdt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SlowCheetah.Xdt.1.1.1\lib\SlowCheetah.Xdt.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseTest\ApiBaseTest.cs" />
+    <Compile Include="BaseTest\IntegrationsBaseTest.cs" />
+    <Compile Include="BaseTest\ShippingServiceBaseTest.cs" />
+    <Compile Include="CredentialManager\CredentialRetriever.cs" />
+    <Compile Include="CustomerServiceWebApp\Account\CredentialTests.cs" />
+    <Compile Include="CustomerServiceWebApp\User\UserTests.cs" />
+    <Compile Include="EcommerceWebApp\Account\SignInTests.cs" />
+    <Compile Include="EcommerceWebApp\MyAccount\AddressesApiTest.cs" />
+    <Compile Include="EnvConstants\ServiceConstants.cs" />
+    <Compile Include="EnvConstants\TestingCategories.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\AccountMasters\AccountMasterPriceListsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\AccountMasters\AccountMastersEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\AccountMasters\AccountMasterTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Addresses\AddressesEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Addresses\AddressTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Contacts\ContactsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Contacts\ContactTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Logins\LoginsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Logins\LoginTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Users\UsersEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Membership\Users\UserTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Categories\CategoriesEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Categories\CategoryTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Offerings\OfferingsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Offerings\OfferingTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\PriceLists\PriceListsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\PriceLists\PriceListTestData.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Products\ProductsEndpointTest.cs" />
+    <Compile Include="IntegrationsWebApp\Merchandise\Products\ProductTestData.cs" />
+    <Compile Include="MultiClients\DataSeed\Enums\TenantsEnum.cs" />
+    <Compile Include="MultiClients\DataSeed\Helpers\ConfigurationHelper.cs" />
+    <Compile Include="MultiClients\DataSeed\ProductPublish.cs" />
+    <Compile Include="MultiClients\DataSeed\ShippingService\AllpointsDataShippingServiceTest1.cs" />
+    <Compile Include="MultiClients\DataSeed\ShippingService\DataFreefreightforNonContiguous.cs" />
+    <Compile Include="MultiClients\DataSeed\ShippingService\DataProximityMessages.cs" />
+    <Compile Include="MultiClients\DataSeed\ShippingService\ESSFlow_RS.cs" />
+    <Compile Include="MultiClients\DataSeed\ShippingService\FmpDataShippingServiceTest1.cs" />
+    <Compile Include="MultiClients\DataSeed\TestUsers\LoginUsersTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AllPointsProductsDataFactoryTest.cs" />
+    <Compile Include="Services\AllpointsShippingDataFactoryTest.cs" />
+    <Compile Include="Services\AllpointsUsersDataFactoryTest.cs" />
+    <Compile Include="Services\FmpDataFactoryTest.cs" />
+    <Compile Include="Services\HttpActionTests.cs" />
+    <Compile Include="ShippingService\Auth\ShippingAuthTest.cs" />
+    <Compile Include="ShippingService\Enums\ServiceLevelCodesEnum.cs" />
+    <Compile Include="ShippingService\General\UniqueExternalIdentifierPerTenantTest.cs" />
+    <Compile Include="ShippingService\ScheduleConfigurations\FlatRateScheduleConfigurationsEndpointTest.cs" />
+    <Compile Include="ShippingService\ScheduleConfigurations\HandlingScheduleConfigurationsEndpointTest.cs" />
+    <Compile Include="ShippingService\ScheduleConfigurations\ScheduleConfigurationTestData.cs" />
+    <Compile Include="ShippingService\ScheduleGroups\FlatRateScheduleGroupsEndpointTest.cs" />
+    <Compile Include="ShippingService\ScheduleGroups\HandlingScheduleGroupsEndpointTest.cs" />
+    <Compile Include="ShippingService\ScheduleGroups\ScheduleGroupTestData.cs" />
+    <Compile Include="ShippingService\Schedules\FlatRateSchedulesEndpointTest.cs" />
+    <Compile Include="ShippingService\Schedules\HandlingSchedulesEndpointTest.cs" />
+    <Compile Include="ShippingService\Schedules\SchedulesTestData.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest_A.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest_B.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest_C.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest_D.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentsEndpointTest_E.cs" />
+    <Compile Include="ShippingService\Shipments\ShipmentTestData.cs" />
+    <Compile Include="ShippingService\ShippingConfigurations\ShippingConfigurationsEndpointTest.cs" />
+    <Compile Include="ShippingService\ShippingConfigurations\ShippingConfigurationTestData.cs" />
+    <Compile Include="ShippingService\ShippingPreferences\ShippingAccountMasterEndpointTest.cs" />
+    <Compile Include="ShippingService\ShippingPreferences\ShippingPreferencesEndpointTest.cs" />
+    <Compile Include="ShippingService\ShippingPreferences\ShippingPreferenceTestData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.Debug.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.Release.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.Softtek-Demo.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.Softtek-QA.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.Softtek-Sandbox.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HttpUtility\HttpUtility.csproj">
+      <Project>{70640963-7BFC-457C-9D2F-813FB2440710}</Project>
+      <Name>HttpUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <Import Project="..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.2.1.0\build\net45\MSTest.TestAdapter.targets')" />
+</Project>

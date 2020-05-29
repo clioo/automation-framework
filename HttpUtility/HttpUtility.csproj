@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70640963-7BFC-457C-9D2F-813FB2440710}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HttpUtility</RootNamespace>
+    <AssemblyName>HttpUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Demo|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Demo\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Sandbox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Sandbox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ChrisCO|AnyCPU'">
+    <OutputPath>bin\ChrisCO\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CacheManager.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Core.1.2.0\lib\net45\CacheManager.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheManager.Serialization.Json, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Serialization.Json.1.2.0\lib\net45\CacheManager.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheManager.StackExchange.Redis, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.StackExchange.Redis.1.2.0\lib\net461\CacheManager.StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheManager.SystemRuntimeCaching, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.SystemRuntimeCaching.1.2.0\lib\net45\CacheManager.SystemRuntimeCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dfsi.Framework.Core, Version=1.0.7243.27774, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dfsi.Framework.Core.2019.10.31.2\lib\net462\Dfsi.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dfsi.Utility.Requester, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dfsi.Utility.Requester.2019.10.23.1\lib\net462\Dfsi.Utility.Requester.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.6.1\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeTypeMap, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaTypeMap.2.1.0.0\lib\net40\MimeTypeMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pipelines.Sockets.Unofficial.2.1.1\lib\net461\Pipelines.Sockets.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.2.0.601\lib\net461\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.2.6.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.StrongName.1.2.6\lib\net46\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.4.7.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Pipelines, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.4.7.0\lib\netstandard2.0\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.3\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.3\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\Contracts\ICustomerServiceWebAppClient.cs" />
+    <Compile Include="Clients\Contracts\IECommerceWebAppClient.cs" />
+    <Compile Include="Clients\Contracts\IIntegrationsWebAppClient.cs" />
+    <Compile Include="Clients\CustomerServiceWebAppClient.cs" />
+    <Compile Include="Clients\ECommerceWebAppClient.cs" />
+    <Compile Include="Clients\IntegrationsWebAppClient.cs" />
+    <Compile Include="Clients\Contracts\IShippingServiceClient.cs" />
+    <Compile Include="Clients\ShippingServiceClient.cs" />
+    <Compile Include="EndPoints\Base\Extensions\EndpointExtended.cs" />
+    <Compile Include="EndPoints\Base\Implementations\EndpointBase.cs" />
+    <Compile Include="EndPoints\Base\Interfaces\ICrudEndpoint.cs" />
+    <Compile Include="EndPoints\Base\Interfaces\IGenericEndpoint.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\DashboardEndPoint.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\LoginEndPoint.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\Models\AccountAccountMaster.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\Models\Contact.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\Models\HttpResponse.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\Models\Login.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\Models\User.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\PlatformEndPoint.cs" />
+    <Compile Include="EndPoints\CustomerServiceWebApp\UserEndpoint.cs" />
+    <Compile Include="EndPoints\EcommerceWebApp\AddressEndPoint.cs" />
+    <Compile Include="EndPoints\EcommerceWebApp\AuthEndPoint.cs" />
+    <Compile Include="EndPoints\EcommerceWebApp\Helpers.cs" />
+    <Compile Include="EndPoints\EcommerceWebApp\Models\Address.cs" />
+    <Compile Include="EndPoints\EcommerceWebApp\Models\HttpResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\AccountMastersEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\CategoriesEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\ContactsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IAccountMastersEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IAddressesEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\ICatalogsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\ICategoriesEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IContactsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\ILoginsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IOfferingsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IPriceListsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IProductsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IPublishMerchandiseEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Interfaces\IUsersEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\LoginsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\AccountMasters\AccountMaster.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\AccountMasters\AccountMasterRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\AccountMasters\AccountMasterResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\AccountMasters\AccountMasterTermConfiguration.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Categories\Category.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Categories\CategoryRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Categories\CategoryResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Contacts\Contact.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Contacts\ContactRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Contacts\ContactResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\EntityBase.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\HttpResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\HttpResponseExtended.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Logins\Login.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Logins\LoginRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Logins\LoginResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Offerings\Offering.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Offerings\OfferingRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Offerings\OfferingResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\PriceLists\PriceList.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\PriceLists\PriceListRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\PriceLists\PriceListResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\DeleteProductRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\GetProductRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\PostProductRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\Product.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\ProductRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Products\ProductResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Users\User.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Users\UserRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\Models\Users\UserResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\OfferingEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\OfferingsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\PriceListsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\ProductEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\UsersEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\AddressEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\BrandsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\CatalogsEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Addresses\Address.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Addresses\AddressRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Addresses\AddressResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Brands\Brand.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Brands\BrandResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Brands\PostBrandRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Brands\PutBrandRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Catalogs\Catalog.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Catalogs\CatalogRequest.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\Models\Catalogs\CatalogResponse.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\PublishContentEndpoint.cs" />
+    <Compile Include="EndPoints\IntegrationsWebApp\V1\PublishMerchandiseEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\AccountMasterShippingEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Enums\RateShopperShipperCodesEnum.cs" />
+    <Compile Include="EndPoints\ShippingService\Enums\ServiceLevelCodesEnum.cs" />
+    <Compile Include="EndPoints\ShippingService\FlatRateScheduleGroupsEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\FlatRateSchedulesConfigurationEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\FlatRateSchedulesEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\HandlingScheduleGroupsEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\HandlingSchedulesConfigurationEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\HandlingSchedulesEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IAccountMasterShippingEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IFlatRateScheduleGroupsEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IFlatRateSchedulesConfigurationEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IFlatRateSchedulesEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IHandlingScheduleGroupsEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IHandlingSchedulesConfigurationEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IHandlingSchedulesEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IShipmentEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IShippingAuthEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IShippingConfigurationEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Interfaces\IShippingPreferencesEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\Auth\ShippingAuthRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\Common\Address.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\Common\HttpEssResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateScheduleGroups\FlatRateScheduleGroup.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateScheduleGroups\FlatRateScheduleGroupsRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateScheduleGroups\FlatRateScheduleGroupsResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateSchedules\FlatRateSchedule.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateSchedules\FlatRateScheduleRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRateSchedules\FlatRateScheduleResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRatesSchedulesConfiguration\FlatRateScheduleConfigurationRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRatesSchedulesConfiguration\FlatRatesSchedulesConfiguration.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\FlatRatesSchedulesConfiguration\FlatRatesSchedulesConfigurationResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingScheduleGroups\HandlingScheduleGroup.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingScheduleGroups\HandlingScheduleGroupRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingScheduleGroups\HandlingScheduleGroupResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedulesConfiguration\HandlingScheduleConfiguration.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedulesConfiguration\HandlingSchedulesConfigurationRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedulesConfiguration\HandlingSchedulesConfigurationResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedules\HandlingSchedule.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedules\HandlingScheduleRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedules\HandlingScheduleResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\HandlingSchedules\HsServiceLevelType.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\Shipment\ShipmentRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\Shipment\ShipmentResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingAccountMasterPreferences\ShippingAccountMasterPreference.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingAccountMasterPreferences\ShippingAccountMasterPreferencesRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingAccountMasterPreferences\ShippingAccountMasterPreferencesResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingConfiguration\ShippingConfiguration.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingConfiguration\ShippingConfigurationRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingConfiguration\ShippingConfigurationResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingPreferences\ShippingPreference.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingPreferences\ShippingPreferencesRequest.cs" />
+    <Compile Include="EndPoints\ShippingService\Models\ShippingPreferences\ShippingPreferencesResponse.cs" />
+    <Compile Include="EndPoints\ShippingService\ShipmentEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\ShippingAuthEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\ShippingConfigurationsEndpoint.cs" />
+    <Compile Include="EndPoints\ShippingService\ShippingPreferencesEndpoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\Deprecated\ITestAddressesFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\Deprecated\ITestDataFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\Deprecated\ITestShippingConfigurationFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\Deprecated\ITestShippingRatesFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\Deprecated\ITestUserAccountsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\IAccountAddressesFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\IAutomationDataFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\IProductsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\IShippingConfigurationFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Contracts\IUserAccountsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Extensions\ProductConfigurationExtension.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\AutomationDataFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Deprecated\TestAddressesFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Deprecated\TestDataFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Deprecated\TestShippingConfigurationFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Deprecated\TestShippingRatesFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Deprecated\TestUserAccountsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Processors\MerchandiseProcessor.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Processors\ShippingServiceProcessor.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\Processors\UserAccountsProcessor.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\ProductsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\ShippingConfigurationFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Implementations\UserAccountsFactory.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\DataFactoryConfiguration.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Merchandise\PatcheableProp.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Merchandise\ProductConfigurationRequest.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Merchandise\TestProduct.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Merchandise\TestProductConfiguration.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\Deprecated\TestShippingExternals.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestFreeFreightRule.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestSchedule.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestServiceLevel.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestShippingAuthCredential.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestShippingConfiguration.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestShippingPreferences.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\Shipping\TestShippingPreferencesConfiguration.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\TestFreeHandlingRule.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\UserAccount\TestAccountAddress.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\UserAccount\TestContactInformation.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\UserAccount\TestUserAccount.cs" />
+    <Compile Include="Services\AutomationDataFactory\Models\UserAccount\UserLoginContact.cs" />
+    <Compile Include="Services\AutomationDataFactory\Utils\ApiUrlHelper.cs" />
+    <Compile Include="Services\HttpAction.cs" />
+    <Compile Include="Services\Merchandise\Products\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseUtility\DatabaseUtility.csproj">
+      <Project>{6D74702E-CD4A-4679-8FDC-30644736AF3E}</Project>
+      <Name>DatabaseUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

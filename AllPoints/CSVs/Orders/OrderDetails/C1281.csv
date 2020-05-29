@@ -1,0 +1,2 @@
+x,email,password,defaultStatus,orderNumber,title,subtitle,sectionDetails,date,dateValue,totalItems,totalItemsValue,poNumber,poNumberValue,status,statusValue,itemTotals,itemTotalsValue,tax,taxValue,shipping,shippingValue,total,totalValue
+,STKtest1@etundra.com,1234,Shipped,51489444-00,Orders details,Order # 51489444-00,Details,Date:,09/26/2018,Total Items:,2,PO number:,81SMAVOP,Status:,Undefined,Item Totals,$51.60,Tax,$0.00,Shipping,$0.00,Total,$51.60 

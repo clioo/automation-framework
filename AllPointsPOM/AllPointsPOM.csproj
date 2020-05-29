@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8ABF24AA-73DA-41BB-854D-87A6E638669F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllPointsPOM</RootNamespace>
+    <AssemblyName>AllPointsPOM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Demo|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Demo\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Sandbox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Sandbox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ChrisCO|AnyCPU'">
+    <OutputPath>bin\ChrisCO\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModels\AddressModel.cs" />
+    <Compile Include="DataModels\ItemModel.cs" />
+    <Compile Include="PageObjects\APIndexPage.cs" />
+    <Compile Include="PageObjects\APLoginPage.cs" />
+    <Compile Include="PageObjects\Base\AllPointsBasePage.cs" />
+    <Compile Include="PageObjects\Base\Components\AccountMenuLeft.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\CategoriesMenu.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\Constants\MyAccountMenuConstants.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\EquipmentManualIFrame.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\EquipmentManualsWidget.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\Header.cs" />
+    <Compile Include="PageObjects\Base\Components\Header\PrimaryMenu.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\AddListModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\Base\ModalBase.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\ConfirmationModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\Constants\ModalActionsConstants.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\ContentModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\Enums\ModalConfirmationActions.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\Enums\ModalContentActions.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\Enums\ModalNoEditsActions.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\EquipmenManualIframeModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\GenericModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\InformationModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Modals\NoEditsModal.cs" />
+    <Compile Include="PageObjects\Base\Components\Table\Contracts\IGenericTable.cs" />
+    <Compile Include="PageObjects\Base\Components\Table\DOMTable.cs" />
+    <Compile Include="PageObjects\CartPOM\APCartPage.cs" />
+    <Compile Include="PageObjects\CartPOM\APCheckoutPage.cs" />
+    <Compile Include="PageObjects\ListPOM\HomePagePOM\APListHomePage.cs" />
+    <Compile Include="PageObjects\ListPOM\ListSummaryPOM\APListSummaryPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\AddressesHomePage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\CreateAddressPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\EditAddressPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Enums\AddressInputs.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Enums\BillingAddressOptions.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Modals\AddressesConfirmationModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Modals\AddressesContentModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Modals\AddressesInformationModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\AddressesPOM\Modals\AddressesNoEditsModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\ContactInfoPOM\ContactInfoEditPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\ContactInfoPOM\ContactInfoHomePage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\ContactInfoPOM\Enums\ContactInfoFields.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\DashboardPOM\DashboardHomePage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\Enums\AccessLevel.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\Enums\ModalsEnum.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Components\DatePicker.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Components\OrdersTable.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Contracts\IDOMTable.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Enums\OrdersEnums.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Helpers\DatesManager.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\Helpers\OrdersHelper.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\OrderDetailsPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\OrdersPOM\OrdersHomePage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Enums\AddPaymentElements.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Enums\BillingAddressOptionsEnum.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Enums\CardTokenInputs.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Enums\ViewPaymentsElements.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Modals\PaymentsConfirmationModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Modals\PaymentsContentModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\Modals\PaymentsInformationModal.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\PaymentOptionsCreatePage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\PaymentOptionsEditPage.cs" />
+    <Compile Include="PageObjects\MyAccountPOM\PaymentOptionsPOM\PaymentOptionsHomePage.cs" />
+    <Compile Include="PageObjects\OderConfirmPOM\OrderConfirmationPage.cs" />
+    <Compile Include="PageObjects\OfferingPOM\CatalogItemsPage.cs" />
+    <Compile Include="PageObjects\OfferingPOM\OfferingProductsPage.cs" />
+    <Compile Include="PageObjects\QuickOrderPOM\QuickOrdersHomePage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataModels\TestAddress.cs" />
+    <Compile Include="DataModels\PaymentOptionModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CoreComponents.csproj">
+      <Project>{fded4ad6-0e8b-46cd-877d-ab56c9acb6af}</Project>
+      <Name>CoreComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

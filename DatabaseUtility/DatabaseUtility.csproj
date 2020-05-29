@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D74702E-CD4A-4679-8FDC-30644736AF3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatabaseUtility</RootNamespace>
+    <AssemblyName>DatabaseUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SofttekQA|AnyCPU'">
+    <OutputPath>bin\SofttekQA\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ChrisCO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ChrisCO\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SofttekSandbox|AnyCPU'">
+    <OutputPath>bin\SofttekSandbox\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Demo|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Demo\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Softtek-Sandbox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Softtek-Sandbox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.2.0\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.2\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.2\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.2\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.24.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\ECommerceProcessor.cs" />
+    <Compile Include="API\Models\Configuration\UserCreate.cs" />
+    <Compile Include="API\Models\Membership\AddressCreate.cs" />
+    <Compile Include="API\Models\Membership\CardTokenCreate.cs" />
+    <Compile Include="API\Models\Membership\ContactInfoGet.cs" />
+    <Compile Include="API\Models\Merchandise\ProductCreate.cs" />
+    <Compile Include="API\UserProcesses.cs" />
+    <Compile Include="Constants\ConfigurationConstants.cs" />
+    <Compile Include="EnvironmentsEnum.cs" />
+    <Compile Include="Extensions\ContentExtensions.cs" />
+    <Compile Include="Models\BsonClassMapExtended.cs" />
+    <Compile Include="Models\Configuration\LoginContent.cs" />
+    <Compile Include="Models\ContentBase.cs" />
+    <Compile Include="Models\Membership\Account.cs" />
+    <Compile Include="Models\Membership\AccountContent.cs" />
+    <Compile Include="Models\Membership\AccountMaster.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\Configuration\Login.cs" />
+    <Compile Include="Models\Membership\AccountMasterContent.cs" />
+    <Compile Include="Models\Membership\Address.cs" />
+    <Compile Include="Models\Membership\AddressContent.cs" />
+    <Compile Include="Models\Membership\CardToken.cs" />
+    <Compile Include="Models\Membership\CardTokenContent.cs" />
+    <Compile Include="Models\Membership\Contact.cs" />
+    <Compile Include="Models\Membership\ContactContent.cs" />
+    <Compile Include="Models\Membership\User.cs" />
+    <Compile Include="Models\Membership\UserContent.cs" />
+    <Compile Include="Models\Merchandise\Brand.cs" />
+    <Compile Include="Models\Merchandise\BrandContent.cs" />
+    <Compile Include="Models\Merchandise\Catalog.cs" />
+    <Compile Include="Models\Merchandise\CatalogContent.cs" />
+    <Compile Include="Models\Merchandise\Category.cs" />
+    <Compile Include="Models\Merchandise\CategoryContent.cs" />
+    <Compile Include="Models\Merchandise\Common\HtmlPage.cs" />
+    <Compile Include="Models\Merchandise\Facet.cs" />
+    <Compile Include="Models\Merchandise\FacetContent.cs" />
+    <Compile Include="Models\Merchandise\Offering.cs" />
+    <Compile Include="Models\Merchandise\OfferingContent.cs" />
+    <Compile Include="Models\Merchandise\Price.cs" />
+    <Compile Include="Models\Merchandise\PriceContent.cs" />
+    <Compile Include="Models\Merchandise\PriceList.cs" />
+    <Compile Include="Models\Merchandise\PriceListContent.cs" />
+    <Compile Include="Models\Merchandise\Product.cs" />
+    <Compile Include="Models\Merchandise\ProductContent.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\OemItem.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\ProdImage.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\ProdShipping.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\ProductAttribute.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\ProductFacet.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\Prop65Message.cs" />
+    <Compile Include="Models\Merchandise\ProductContents\Specification.cs" />
+    <Compile Include="Models\OrderCapture\Cart.cs" />
+    <Compile Include="Models\OrderCapture\CartContent.cs" />
+    <Compile Include="Models\OrderCapture\Order.cs" />
+    <Compile Include="Models\OrderCapture\OrderContent.cs" />
+    <Compile Include="Models\OrderCapture\Shopper.cs" />
+    <Compile Include="Models\OrderCapture\ShopperContent.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\VersionStatusEnum.cs" />
+    <Compile Include="Mongo\Contexts\ConfigurationContext.cs" />
+    <Compile Include="Mongo\Contexts\Interfaces\IMerchandiseContext.cs" />
+    <Compile Include="Mongo\Contexts\Interfaces\IOrderCaptureContext.cs" />
+    <Compile Include="Mongo\Contexts\MembershipContext.cs" />
+    <Compile Include="Mongo\Contexts\MerchandiseContext.cs" />
+    <Compile Include="Mongo\Interfaces\IMongoContext.cs" />
+    <Compile Include="Mongo\Interfaces\IMongoRepository.cs" />
+    <Compile Include="Mongo\Contexts\Interfaces\IConfigurationContext.cs" />
+    <Compile Include="Mongo\Contexts\Interfaces\IMembershipContext.cs" />
+    <Compile Include="Mongo\MongoContext.cs" />
+    <Compile Include="Mongo\MongoRepository.cs" />
+    <Compile Include="Mongo\PublishedContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="Services\MembershipService.cs" />
+    <Compile Include="Services\MerchandiseService.cs" />
+    <Compile Include="Services\OrderCaptureService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\ServiceGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mongo\Contexts\OrderCaptureContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+</Project>
